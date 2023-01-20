@@ -1,0 +1,254 @@
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vježba jquery-ja</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+<body>
+
+    <h1>Projekt - jquery</h1>
+
+<b>VAŽNO! PROČITATI PRIJE KORIŠTENJA STRANICE!</b><br/>
+Jquery metode neće se učitati ukoliko niste ugasili skočni prozor odnosno obavijesti. 
+<br/>
+<br/>
+Legenda:<br/>
+1. Klikom na sliku mijenja se trenutna slika s novom.<br/>
+2. Dolaskom miša iznad teksta OMS DM on se ukosi.<br/>
+3. Klikom na stavku izbornika 2. razina dodaje se nova stavka na izborniku 0. razina.<br/>
+4. Klikom na panel B (bilo gdje) panel dobije deblju crtičastu granicu crvene boje.<br/>
+5. Klikom na panel D on nestaje.<br/>
+6. Dolaskom miša na panel F njegova pozadina postaje crvena, odlaskom miša s panela F njegova pozadina postaje plava.<br/>
+7. Dvoklikom na panel E u panelu C se pojavljuje paragraf Lorem ipsum teksta.<br/>
+8. Klikom na panel H (bilo gdje) kućica OMS bude označena kvačicom.<br/>
+9. Pritiskom bilo koje tipke u prostor za pisanje, pozadina panela mijenja boju u crvenu.<br/>
+10. Klikom na panel J pojavi se animacija.<br/>
+11. Dolaskom miša na panel K pojavit će se obavijest u gornjem dijelu prozora.<br/>
+12. Dvoklikom na panel L paneli M i N nestat će različitom brzinom.<br/>
+13. Pritiskom na gumb Gore tekst će se sakriti. Pritiskom na gumb Dolje tekst će se pojaviti.<br/>
+14. Promjenom širine zaslona (odnosno stranice) pojavit će se broj koliko ste puta mijenjali širinu.<br/>
+15. <b>Važno!</b> Ova se metoda odnosi samo na klik miša, bez otpuštanja. Klikom i držanjem pojavit će se obavijest u gornjem dijelu prozora.<br/>
+16. <b>Važno!</b> Ova se metoda odnosi samo na otpuštanje klika. Klikom, držanjem te otpuštanjem miša, pojavit će se obavijest u gornjem dijelu prozoru.<br/>
+17. Klikom na točkice tekst u panelima u kojima piše "oblikovanje", "mrežnih" i "stranica" postat će proziran.
+
+
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+
+        <div class="large-2 small-12 cell">
+          <div class="callout hide-for-small-only">
+            <figure>
+              <img src="slike/pilic.jpg" id="pilic">
+            </figure>
+          </div>
+        </div>
+
+        <div class="large-10 small-12 cell">
+          <div class="callout hide-for-small-only" id="OMS">
+            OMS DM
+          </div>
+        </div>
+
+        <div class="large-12 small-12 cell">
+          <div class="callout">
+            <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+              <button class="menu-icon" type="button" data-toggle></button>
+              <div class="title-bar-title">Menu</div>
+            </div>
+            
+            <div class="top-bar" id="example-menu">
+              <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                  <li class="menu-text">OMS</li>
+                  <li class="has-submenu">
+                    <a href="#0" id="razine">Razine</a>
+                    <ul class="submenu menu vertical" data-submenu>
+                      <li><a href="#0" id="nulta"></a></li>
+                      <li><a href="#0">Prva</a></li>
+                        <ul>
+                          <li><a href="#0" id="razina2">Druga</a></li>
+                        </ul>
+                      <li><a href="#0">Treća</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#0">FFOS</a></li>
+                  <li><a href="#0">OZIZ</a></li>
+                </ul>
+              </div>
+              <div class="top-bar-right">
+                <ul class="menu">
+                  <li><input type="search" placeholder="Search"></li>
+                  <li><button type="button" class="button">Search</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="large-6 small-12 cell">
+          <div class="callout">
+            A
+          </div>
+        </div>
+
+        <div class="large-6 cell">
+          <div class="callout hide-for-small-only" id="b">
+            B
+          </div>
+        </div>
+
+        <div class="large-4 cell">
+          <div class="callout hide-for-small-only" id="c">
+            C
+          </div>
+        </div>
+
+        <div class="large-4 small-6 cell">
+          <div class="callout" id="d">
+            D
+          </div>
+        </div>
+
+        <div class="large-4 small-6 cell">
+          <div class="callout" id="e">
+            E
+          </div>
+        </div>
+
+        <div class="large-12 small-12 cell">
+          <div class="callout" id="f">
+            F
+          </div>
+        </div>
+        
+        <div class="large-12 small-12 cell">
+          <div class="callout" id="g">
+            <input type="checkbox" id="oms" value="oms">OMS<br/>
+          </div>
+        </div>
+
+        <div class="large-12 small-12 cell">
+          <div class="callout" id="h">
+            H
+          </div>
+        </div>
+
+        <div class="large-12 small-12 cell">
+          <div class="callout" id="i">
+              <input type="text" id="ime" name="ime"/>
+          </div>
+        </div>
+
+        <div class="large-4 small-4 cell">
+          <div class="callout" id="j">
+            J
+          </div>
+        </div>
+
+        <div class="large-4 small-4 cell">
+          <div class="callout" id="k">
+            K
+          </div>
+        </div>
+
+        <div class="large-4 small-4 cell">
+          <div class="callout" id="l">
+            L
+          </div>
+        </div>
+
+        <!--https://www.youtube.com/watch?v=dQw4w9WgXcQ-->
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="m">
+            M
+          </div>
+        </div>
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="n">
+            N
+          </div>
+        </div>
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="o">
+            <p id="neki">
+              Ovo je neki tekst.
+            </p>
+            <button id="prvi">Gore</button>
+            <button id="drugi">Dolje</button>
+          </div>
+        </div>
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="p">
+            <p>Zaslon je promijenio širinu <span>0</span> puta.</p>
+            <p>Mijenjajte širinu zaslona!</p>
+          </div>
+        </div>
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="r">
+            <p>
+              Pritisni i drži tipku miša!
+            </p>
+          </div>
+        </div>
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="s">
+            <p>
+              Pristisni, drži i otpusti tipku miša!
+            </p>
+          </div>
+        </div>
+
+        <div class="large-12 small-4 cell">
+          <div class="callout" id="t">
+            <p>
+              ..................................
+            </p>
+          </div>
+        </div>
+
+        <div class="large-4 small-4 cell">
+          <div class="callout" id="u">
+            <p id="oblikovanje">
+              OBLIKOVANJE
+            </p>
+          </div>
+        </div>
+
+        <div class="large-4 small-4 cell">
+          <div class="callout" id="v">
+            <p id="mreznih">
+              MREŽNIH
+            </p>
+          </div>
+        </div>
+
+        <div class="large-4 small-4 cell">
+          <div class="callout" id="z">
+            <p id="stranica">
+              STRANICA
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

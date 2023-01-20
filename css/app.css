@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+}
+
+.callout{
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+#j{
+    position: absolute;
+}
+
+#m{
+    background-color: black;
+}
+
+#n{
+    background-color: black;
+}
+
